@@ -1,0 +1,56 @@
+.navbar-custom {
+  background-color: rgba(10, 25, 47, 0.95);
+  backdrop-filter: blur(10px);
+  color: var(--lightest-slate);
+  font-family: 'NTR', sans-serif;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-custom .navbar-brand {
+  color: var(--lightest-slate) !important;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: var(--green-bright) !important;
+}
+
+.navbar-custom .nav-link {
+  color: var(--lightest-slate) !important;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  color: var(--green-bright) !important;
+}
+
+.navbar-custom .navbar-toggler {
+  border-color: var(--green-bright);
+}
+
+.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(100, 255, 218, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media only screen and (max-width: 991px) {
+  .navbar-custom .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-custom .nav-link {
+    margin: 5px 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .navbar-custom .navbar-brand {
+    display: none;
+  }
+  
+  .navbar-custom .navbar-nav.me-auto .nav-link {
+    display: none;
+  }
+}
