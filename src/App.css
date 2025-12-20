@@ -1,0 +1,72 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in Animation */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(10vh);
+  visibility: hidden;
+  transition: opacity 0.6s ease-out, transform 1s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
+.App {
+  font-family: "NTR", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--navy);
+  color: var(--lightest-slate);
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none !important;
+  color: var(--green-bright) !important;
+}
+
+#content {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--lightest-navy);
+}
+
+.section-header {
+  display: flex;
+  padding-bottom: 42px;
+  width: 100%;
+}
+
+.section-header::after {
+  content: "";
+  display: block;
+  width: 300px;
+  margin-top: 39px;
+  height: 1px;
+  margin-left: 20px;
+  background-color: var(--lightest-navy);
+}
+
+.section-title {
+  font-family: "NTR", sans-serif;
+  color: var(--lightest-slate);
+  font-size: 46px;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+  .section-header::after {
+    display: none;
+  }
+
+  .section-title {
+    font-size: 32px;
+  }
+}
