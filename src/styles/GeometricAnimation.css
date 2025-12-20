@@ -1,0 +1,20 @@
+#geometric-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+#geometric-animation canvas {
+  width: 400px;
+  height: 400px;
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  #geometric-animation canvas {
+    width: 250px;
+    height: 250px;
+  }
+}
