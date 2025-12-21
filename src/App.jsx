@@ -3,7 +3,6 @@ import "./styles/Global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import Intro from "./components/Intro";
-import GeometricAnimation from "./components/GeometricAnimation";
 
 function App() {
   return (
