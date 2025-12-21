@@ -3,6 +3,7 @@ import "./styles/Global.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import Intro from "./components/Intro";
+import About from "./components/About";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <NavBar />
       <div id="content">
         <Intro />
+        <About />
       </div>
     </div>
   );
