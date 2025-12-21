@@ -1,0 +1,14 @@
+#experience {
+  min-height: 50vh;
+  margin: auto;
+  max-width: 1000px;
+  padding-top: 100px;
+}
+
+@media only screen and (max-width: 600px) {
+  #experience {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 80px;
+  }
+}

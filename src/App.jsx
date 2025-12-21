@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import Intro from "./components/Intro";
 import About from "./components/About";
+import Experience from "./components/Experience";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div id="content">
         <Intro />
         <About />
+        <Experience />
       </div>
     </div>
   );
