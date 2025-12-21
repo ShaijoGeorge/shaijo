@@ -3,15 +3,13 @@ import FadeInSection from "./FadeInSection";
 
 const About = () => {
     const tech_stack = [
+        "PHP/Symfony",
         "Flutter/Dart",
         "React.js",
         "Python",
         "JavaScript",
-        "PHP/Symfony",
-        "Node.js",
-        "PostgreSQL",
         "Supabase",
-        "OpenCV",
+        "MySQL",
         "FastAPI"
   ];
 
@@ -43,7 +41,7 @@ const About = () => {
                     </p>
                 </div>
                 <div className="about-image">
-                    <img alt="Shaijo George" src="/assets/me.jpg" />
+                    <img alt="Shaijo George" src="src/assets/me.jpg" />
                 </div>
             </div>
         </FadeInSection>
