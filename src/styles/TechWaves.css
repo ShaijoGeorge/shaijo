@@ -1,0 +1,11 @@
+#geometric-animation canvas {
+  width: 100px !important;
+  height: 100px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  #geometric-animation canvas {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
