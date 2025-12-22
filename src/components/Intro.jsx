@@ -2,16 +2,16 @@ import "../styles/Intro.css";
 import { ReactTyped } from "react-typed";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import FadeInSection from "./FadeInSection";
-import GeometricAnimation from "./GeometricAnimation";
+import TechWaves from "./TechWaves";
 
 const Intro = () => {
     return (
         <div id="intro">
-            <GeometricAnimation />
+            <TechWaves />
             <div className="intro-title-container">
                 <ReactTyped
                     strings={["hi, <span class='intro-name'>shaijo</span> here."]}
-                    typeSpeed={80}
+                    typeSpeed={120}
                     backSpeed={50}
                     className="intro-title"
                     contentType="html"
