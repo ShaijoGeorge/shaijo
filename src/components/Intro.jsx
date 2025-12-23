@@ -2,12 +2,23 @@ import "../styles/Intro.css";
 import { ReactTyped } from "react-typed";
 import EmailRoundedIcon from "@mui/icons-material/EmailRounded";
 import FadeInSection from "./FadeInSection";
-import TechWaves from "./TechWaves";
+import MetaBalls from "./MetaBalls";
 
 const Intro = () => {
     return (
         <div id="intro">
-            <TechWaves />
+            <MetaBalls
+                color="#64ffda"
+                cursorBallColor="#64ffda"
+                cursorBallSize={2}
+                ballCount={15}
+                animationSize={30}
+                enableMouseInteraction={true}
+                enableTransparency={true}
+                hoverSmoothness={0.05}
+                clumpFactor={1}
+                speed={0.3}
+            />
             <div className="intro-title-container">
                 <ReactTyped
                     strings={["hi, <span class='intro-name'>shaijo</span> here."]}
