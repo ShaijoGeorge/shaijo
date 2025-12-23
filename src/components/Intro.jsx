@@ -32,7 +32,7 @@ const Intro = () => {
                     />
             </div>
             <FadeInSection>
-                <div className="intro-subtitle">I create stuff sometimes.</div>
+                <div className="intro-subtitle">Crafting digital solutions through code.</div>
                 <div className="intro-desc">
                     I'm a software engineer passionate about building impactful products.
                     I love working on full-stack applications, mobile apps, and exploring
