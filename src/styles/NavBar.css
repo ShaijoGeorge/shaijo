@@ -3,59 +3,185 @@
   color: var(--lightest-slate);
   font-family: 'NTR', sans-serif;
   font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  min-height: 70px;
+  transition: all 0.3s ease;
+}
 
-  padding-top: 8px;
-  padding-bottom: 8px;
-  min-height: 56px;
+.navbar-custom .container {
+  max-width: 1200px;
 }
 
 .navbar-custom .navbar-brand {
-  color: var(--lightest-slate) !important;
-  font-size: 20px;
+  color: var(--green-bright) !important;
+  font-size: 22px;
+  font-weight: bold;
   line-height: 1;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
 }
 
 .navbar-custom .navbar-brand:hover {
-  color: var(--green-bright) !important;
+  color: var(--lightest-slate) !important;
+  transform: translateY(-2px);
 }
 
 .navbar-custom .nav-link {
   color: var(--lightest-slate) !important;
-  margin: 0 10px;
-  transition: color 0.3s ease;
+  margin: 0 8px;
+  transition: all 0.3s ease;
   font-size: 16px;
   padding: 0.5rem 0.75rem;
+  position: relative;
+}
+
+.navbar-custom .nav-link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: var(--green-bright);
+  transition: width 0.3s ease;
 }
 
 .navbar-custom .nav-link:hover {
   color: var(--green-bright) !important;
 }
 
+.navbar-custom .nav-link:hover::before {
+  width: 80%;
+}
+
+/* Social icons styling */
+.navbar-custom .ms-auto .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0 5px;
+}
+
+.navbar-custom .ms-auto .nav-link:hover {
+  transform: translateY(-3px);
+}
+
 .navbar-custom .navbar-toggler {
-  border-color: var(--green-bright);
+  border: 2px solid var(--green-bright);
+  padding: 0.5rem 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .navbar-toggler:hover {
+  background-color: var(--green-tint);
+}
+
+.navbar-custom .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(100, 255, 218, 0.25);
 }
 
 .navbar-custom .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(100, 255, 218, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  width: 1.5em;
+  height: 1.5em;
 }
 
+/* Tablet and below */
 @media only screen and (max-width: 991px) {
-  .navbar-custom .navbar-brand {
-    font-size: 1.2rem;
+  .navbar-custom {
+    min-height: 60px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
-  
+
+  .navbar-custom .navbar-brand {
+    font-size: 20px;
+  }
+
+  .navbar-custom .navbar-collapse {
+    background-color: var(--light-navy);
+    margin-top: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -10px var(--navy-shadow);
+  }
+
   .navbar-custom .nav-link {
-    margin: 5px 0;
+    margin: 8px 0;
+    padding: 12px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+
+  .navbar-custom .nav-link:hover {
+    background-color: var(--green-tint);
+    padding-left: 24px;
+  }
+
+  .navbar-custom .nav-link::before {
+    display: none;
+  }
+
+  /* Separate styling for navigation and social links on mobile */
+  .navbar-custom .me-auto {
+    border-bottom: 1px solid var(--lightest-navy);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+  }
+
+  .navbar-custom .ms-auto {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar-custom .ms-auto .nav-link {
+    margin: 0;
+    padding: 10px;
   }
 }
 
+/* Mobile specific */
 @media only screen and (max-width: 600px) {
-  .navbar-custom .navbar-brand {
-    display: none;
+  .navbar-custom {
+    min-height: 56px;
   }
-  
-  .navbar-custom .navbar-nav.me-auto .nav-link {
-    display: none;
+
+  .navbar-custom .navbar-brand {
+    font-size: 18px;
+  }
+
+  .navbar-custom .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .navbar-custom .navbar-collapse {
+    margin-top: 12px;
+    padding: 15px;
+  }
+
+  .navbar-custom .nav-link {
+    font-size: 15px;
+    padding: 10px 14px;
+  }
+
+  .navbar-custom .ms-auto .nav-link svg {
+    font-size: 22px !important;
+  }
+}
+
+/* Extra small devices */
+@media only screen and (max-width: 360px) {
+  .navbar-custom .navbar-brand {
+    font-size: 16px;
+  }
+
+  .navbar-custom .nav-link {
+    font-size: 14px;
   }
 }
