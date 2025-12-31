@@ -41,7 +41,7 @@ const About = () => {
                     </p>
                 </div>
                 <div className="about-image">
-                    <img alt="Shaijo George" src="src/assets/me.jpg" />
+                    <img alt="Shaijo George" src="/assets/me1.jpg" />
                 </div>
             </div>
         </FadeInSection>
