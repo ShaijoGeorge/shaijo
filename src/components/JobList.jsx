@@ -1,9 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, Tab, Box, Typography } from "@mui/material";
 import FadeInSection from "./FadeInSection";
 
 const JobList = () => {
   const [value, setValue] = useState(0);
+  // Initialize state based on current width
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 900); // Increased breakpoint for Tablets!
+
+  // 1. DYNAMIC RESIZE LISTENER
+  useEffect(() => {
+    const handleResize = () => {
+      // Switch to "Mobile Mode" (Horizontal Tabs) sooner (at 900px)
+      // This ensures Tablets get the horizontal tabs, which look much better than squashed vertical ones.
+      setIsMobile(window.innerWidth < 900);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const experienceItems = {
     "COFSO": {
@@ -23,27 +37,33 @@ const JobList = () => {
     setValue(newValue);
   };
 
-  const isMobile = window.innerWidth < 600;
-
   return (
-    <Box sx={{ display: "flex", flexDirection: isMobile ? "column" : "row", minHeight: 300 }}>
+    <Box sx={{ 
+      display: "flex", 
+      flexDirection: isMobile ? "column" : "row", 
+      minHeight: 300,
+      gap: isMobile ? 2 : 5 // Add breathing room between tabs and content
+    }}>
+      {/* TABS LIST */}
       <Tabs
         orientation={isMobile ? "horizontal" : "vertical"}
-        variant={isMobile ? "fullWidth" : "scrollable"}
+        variant={isMobile ? "scrollable" : "standard"}
         value={value}
         onChange={handleChange}
         sx={{
           borderRight: isMobile ? 0 : 1,
           borderBottom: isMobile ? 1 : 0,
           borderColor: "var(--lightest-navy)",
+          minWidth: isMobile ? "100%" : "150px", // Give vertical tabs specific width
           "& .MuiTab-root": {
             color: "var(--lightest-slate)",
             fontFamily: "NTR, sans-serif",
-            fontSize: "16px",
+            // 2. FLUID FONT SIZE
+            fontSize: "var(--fz-body)", 
             textAlign: "left",
-            alignItems: "flex-start",
+            alignItems: isMobile ? "center" : "flex-start",
             textTransform: "none",
-            minWidth: isMobile ? "auto" : 120,
+            padding: isMobile ? "12px" : "0 20px 0 0", // Better padding
           },
           "& .Mui-selected": {
             color: "var(--green-bright) !important",
@@ -58,12 +78,13 @@ const JobList = () => {
         ))}
       </Tabs>
       
+      {/* CONTENT PANEL */}
       {Object.keys(experienceItems).map((key, i) => (
         <Box
           key={i}
           role="tabpanel"
           hidden={value !== i}
-          sx={{ p: 3, flex: 1 }}
+          sx={{ flex: 1 }}
         >
           {value === i && (
             <Box>
@@ -71,7 +92,8 @@ const JobList = () => {
                 component="span"
                 sx={{
                   fontFamily: "NTR, sans-serif",
-                  fontSize: "28px",
+                  // 3. FLUID HEADINGS
+                  fontSize: "var(--fz-subheading)", 
                   fontWeight: "bold",
                   color: "var(--lightest-slate)",
                 }}
@@ -82,7 +104,7 @@ const JobList = () => {
                 component="span"
                 sx={{
                   fontFamily: "NTR, sans-serif",
-                  fontSize: "28px",
+                  fontSize: "var(--fz-subheading)",
                   color: "var(--green-bright)",
                   fontWeight: "bold",
                 }}
@@ -92,14 +114,15 @@ const JobList = () => {
               <Typography
                 sx={{
                   fontFamily: "NTR, sans-serif",
-                  fontSize: "18px",
+                  fontSize: "var(--fz-body)",
                   color: "var(--slate)",
                   mt: 1,
+                  mb: 3
                 }}
               >
                 {experienceItems[key]["duration"]}
               </Typography>
-              <Box component="ul" sx={{ listStyle: "none", pl: 0, mt: 3 }}>
+              <Box component="ul" sx={{ listStyle: "none", pl: 0, mt: 0 }}>
                 {experienceItems[key]["desc"].map((descItem, j) => (
                   <FadeInSection key={j} delay={`${j + 1}00ms`}>
                     <Typography
@@ -108,7 +131,7 @@ const JobList = () => {
                         position: "relative",
                         paddingLeft: "30px",
                         paddingBottom: "16px",
-                        fontSize: "18px",
+                        fontSize: "var(--fz-body)", // Fluid Body Text
                         color: "var(--slate)",
                         fontFamily: "NTR, sans-serif",
                         "&::before": {
