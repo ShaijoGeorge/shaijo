@@ -2,22 +2,25 @@
   min-height: 50vh;
   margin: auto;
   max-width: 1000px;
-  padding-top: 100px;
+  padding: 100px 20px; /* Consistent padding */
 }
 
 .about-content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap; /* CRITICAL: Allows items to wrap naturally */
+  justify-content: center; /* Centers items when wrapped */
   gap: 40px;
 }
 
 .about-description {
   font-family: "NTR", sans-serif;
   color: var(--slate);
-  max-width: 600px;
-  font-size: 22px;
-  text-align: justify;
-  margin: 0;
+  font-size: var(--fz-body);
+  text-align: left;
+
+  /* Grow: 1, Shrink: 1, Basis: 400px */
+  flex: 1 1 400px;
 }
 
 .about-description p {
@@ -44,7 +47,7 @@
 .about-description li {
   position: relative;
   padding-left: 20px;
-  font-size: 18px;
+  font-size: var(--fz-body);
   color: var(--slate);
 }
 
@@ -58,10 +61,14 @@
 .about-image {
   display: flex;
   align-items: flex-start;
+  justify-content: center;
   padding-top: 20px;
+
+  flex: 1 1 300px;
 }
 
 .about-image img {
+  width: 100%;
   max-width: 300px;
   height: auto;
   border-radius: 10px;
@@ -71,36 +78,4 @@
 
 .about-image img:hover {
   transform: translateY(-7px);
-}
-
-@media only screen and (max-width: 788px) {
-  .about-image img {
-    max-width: 200px;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  #about {
-    padding-top: 80px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .about-content {
-    flex-direction: column;
-  }
-
-  .about-description {
-    font-size: 18px;
-    max-width: 100%;
-  }
-
-  .about-description a,
-  .about-description b {
-    font-size: 17px;
-  }
-
-  .about-image {
-    display: none;
-  }
 }

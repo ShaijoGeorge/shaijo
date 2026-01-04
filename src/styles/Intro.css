@@ -5,7 +5,8 @@
   text-align: center;
   margin: auto;
   max-width: 1000px;
-  padding-top: 150px;
+  /* Fluid padding: 150px top, but scales down on small screens */
+  padding: clamp(100px, 15vh, 150px) 20px; 
   min-height: 100vh;
 }
 
@@ -18,7 +19,8 @@
 }
 
 .intro-title {
-  font-size: 86px;
+  /* Fluid Variable */
+  font-size: var(--fz-heading);
 }
 
 .intro-name {
@@ -28,26 +30,28 @@
 
 .typed-cursor {
   color: var(--green-bright);
-  font-size: 86px;
+  font-size: var(--fz-heading);
 }
 
 .intro-subtitle {
-  margin-top: -36px;
+  /* Use Fluid Variable */
+  font-size: var(--fz-subheading);
+  margin-top: 10px;
   font-family: "NTR", sans-serif;
   color: var(--slate);
-  text-align: center;
   font-weight: 300;
-  font-size: 48px;
+  text-align: center;
 }
 
 .intro-desc {
   color: var(--slate);
   font-family: "NTR", sans-serif;
-  font-size: 22px;
+  font-size: var(--fz-body);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   max-width: 600px;
+  width: 100%; /* to ensure it doesn't overflow */
   padding-bottom: 30px;
 }
 
@@ -69,39 +73,4 @@
   background-color: var(--green-tint);
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(100, 255, 218, 0.2);
-}
-
-@media only screen and (max-width: 600px) {
-  #intro {
-    padding: 100px 20px 50px;
-    min-height: unset;
-  }
-
-  .intro-title-container {
-    font-size: 36px;
-    margin-top: 10px;
-  }
-
-  .intro-title {
-    font-size: 46px;
-  }
-
-  .typed-cursor {
-    font-size: 46px;
-  }
-
-  .intro-subtitle {
-    margin-top: 10px;
-    font-size: 28px;
-  }
-
-  .intro-desc {
-    font-size: 18px;
-    padding-bottom: 30px;
-  }
-
-  .intro-contact {
-    font-size: 18px;
-    padding: 10px 25px;
-  }
 }

@@ -10,4 +10,29 @@
   --white: #e6f1ff;
   --green-bright: #64ffda;
   --green-tint: rgba(100, 255, 218, 0.1);
+
+  /* FLUID TYPOGRAPHY VARIABLES */
+  /* "clamp(Minimum, Preferred, Maximum)" */
+  
+  /* Scales from 40px (phone) to 86px (desktop) automatically */
+  --fz-heading: clamp(40px, 8vw, 86px); 
+  
+  /* Scales from 24px to 48px */
+  --fz-subheading: clamp(24px, 5vw, 48px);
+  
+  /* Scales from 30px to 76px */
+  --fz-jumbo: clamp(30px, 7vw, 76px);
+  
+  /* Standard text scaling */
+  --fz-body: clamp(16px, 2vw, 20px);
+}
+
+/* Global Reset for better sizing */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrollbars on small screens */
 }
