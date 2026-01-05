@@ -57,16 +57,12 @@ a {
 .section-title {
   font-family: "NTR", sans-serif;
   color: var(--lightest-slate);
-  font-size: 46px;
+  font-size: var(--fz-section-title);
   font-weight: bold;
 }
 
 @media only screen and (max-width: 600px) {
   .section-header::after {
     display: none;
-  }
-
-  .section-title {
-    font-size: 32px;
   }
 }

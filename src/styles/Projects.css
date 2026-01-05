@@ -62,7 +62,7 @@
 }
 
 .carousel-caption h3 {
-  font-size: 38px;
+  font-size: var(--fz-carousel-title);
   font-weight: bold;
   color: var(--lightest-slate);
   text-transform: uppercase;
@@ -75,7 +75,7 @@
 .carousel-caption p {
   font-family: "NTR", sans-serif;
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--fz-body);
   color: var(--lightest-slate);
   line-height: 1.6;
   text-align: center;
@@ -231,12 +231,10 @@
   }
 
   .carousel-caption h3 {
-    font-size: 30px;
     margin-bottom: 10px;
   }
 
   .carousel-caption p {
-    font-size: 16px;
     line-height: 1.4;
     max-width: 100%;
   }
