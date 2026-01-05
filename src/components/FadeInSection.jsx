@@ -1,22 +1,37 @@
-/* eslint-disable no-unused-vars */
-import { motion } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
 
 export default function FadeInSection({ children, delay = "0ms" }) {
-  // Parse delay string (e.g., "100ms") to seconds
-  const delaySec = parseFloat(delay) / 1000;
-
+  const [isVisible, setVisible] = useState(false);
+  const domRef = useRef();
+  
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVisible(entry.isIntersecting);
+        }
+      });
+    });
+    
+    const currentRef = domRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+    
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+  
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-        delay: isNaN(delaySec) ? 0 : delaySec,
-      }}
+    <div
+      className={`fade-in-section ${isVisible ? "is-visible" : ""}`}
+      style={{ transitionDelay: delay }}
+      ref={domRef}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
