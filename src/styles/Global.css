@@ -25,6 +25,13 @@
   
   /* Standard text scaling */
   --fz-body: clamp(16px, 2vw, 20px);
+
+  /* New Fluid Variables for Refactor */
+  --fz-section-title: clamp(32px, 5vw, 46px);
+  --fz-nav-brand: clamp(16px, 2.5vw, 22px);
+  --fz-nav-link: clamp(14px, 2vw, 16px);
+  --spacing-nav-y: clamp(8px, 1.5vh, 12px);
+  --fz-carousel-title: clamp(30px, 4vw, 38px);
 }
 
 /* Global Reset for better sizing */

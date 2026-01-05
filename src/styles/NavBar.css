@@ -3,8 +3,8 @@
   color: var(--lightest-slate);
   font-family: 'NTR', sans-serif;
   font-weight: bold;
-  padding-top: 12px;
-  padding-bottom: 12px;
+  padding-top: var(--spacing-nav-y);
+  padding-bottom: var(--spacing-nav-y);
   min-height: 70px;
   transition: all 0.3s ease;
 }
@@ -15,7 +15,7 @@
 
 .navbar-custom .navbar-brand {
   color: var(--green-bright) !important;
-  font-size: 22px;
+  font-size: var(--fz-nav-brand);
   font-weight: bold;
   line-height: 1;
   transition: all 0.3s ease;
@@ -31,7 +31,7 @@
   color: var(--lightest-slate) !important;
   margin: 0 8px;
   transition: all 0.3s ease;
-  font-size: 16px;
+  font-size: var(--fz-nav-link);
   padding: 0.5rem 0.75rem;
   position: relative;
 }
@@ -93,12 +93,6 @@
 @media only screen and (max-width: 991px) {
   .navbar-custom {
     min-height: 60px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-
-  .navbar-custom .navbar-brand {
-    font-size: 20px;
   }
 
   .navbar-custom .navbar-collapse {
@@ -151,10 +145,6 @@
     min-height: 56px;
   }
 
-  .navbar-custom .navbar-brand {
-    font-size: 18px;
-  }
-
   .navbar-custom .container {
     padding-left: 15px;
     padding-right: 15px;
@@ -166,22 +156,10 @@
   }
 
   .navbar-custom .nav-link {
-    font-size: 15px;
     padding: 10px 14px;
   }
 
   .navbar-custom .ms-auto .nav-link svg {
     font-size: 22px !important;
-  }
-}
-
-/* Extra small devices */
-@media only screen and (max-width: 360px) {
-  .navbar-custom .navbar-brand {
-    font-size: 16px;
-  }
-
-  .navbar-custom .nav-link {
-    font-size: 14px;
   }
 }
