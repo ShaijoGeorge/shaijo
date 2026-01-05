@@ -79,3 +79,19 @@
 .about-image img:hover {
   transform: translateY(-7px);
 }
+
+@media only screen and (max-width: 900px) {
+  .about-content {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .about-image {
+    padding-top: 0;
+    width: 100%;
+  }
+  
+  .about-description {
+     flex: 1 1 auto;
+  }
+}
